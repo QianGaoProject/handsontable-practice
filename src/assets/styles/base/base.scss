@@ -1,0 +1,53 @@
+
+
+$bg-color: #79818f;
+$icon-color: #ffffff;
+$text-color: #ffffff;
+$placeholder-color: #d1d3d8;
+$border-color: #ffffff;
+
+$title-bar-bg-from-color: #c2cad6;
+$title-bar-bg-to-color: #818fa2;
+
+$input-bg-color: #9aa0ab;
+
+
+$col-header-text-color: #ffffff;
+$col-header-bg-from-color: #d9e2ec;
+$col-header-bg-to-color: #495469;
+$col-even-bg-color: #bcc0c7;
+$col-even-text-color: #ffffff;
+$col-odd-bg-color: #f2f3f4;
+$col-odd-text-color: #79818f;
+
+@font-face {
+    font-family: "Helvetica Neue";
+    font-style: normal;
+    font-weight: normal;
+    //Please replace url to Helvetica 
+    src: url("../../fonts/Merriweather-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Merriweather";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../../fonts/Merriweather-Italic.ttf") format("truetype");
+}
+
+body {
+    background-color: $bg-color;
+    text-align: center;
+    padding: 5em 0em;
+    font-family: "Merriweather";
+    margin: 0px;
+    min-height: calc(100vh - 14em);
+    @media screen and (max-width : 823px){        
+        font-size: 12px;
+        line-height: 25px;        
+        padding: 0.5em 0.5em;
+        min-height: calc(100vh - 3em);
+        border: 1em solid white;
+    }
+}
+

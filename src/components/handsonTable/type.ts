@@ -7,6 +7,7 @@ import {
 interface PropsType {
     items: Item[]
     cars: Car[]
+    screenWidth: number
     updateCars: UpdateCarsActionCreator
 }
 

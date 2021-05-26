@@ -1,4 +1,4 @@
-import { Canvas, ColumnContainer, OptionEditorContainer, TextDescription, TextTitle, TitleRectangle } from './style'
+import { Canvas, ColumnContainer, OptionEditorContainer, RowContainer, TextDescription, TextTitle, TitleRectangle } from './style'
 import { getCars, getColumns, getItems } from '../../action'
 
 import HandsonTable from '../handsonTable'
@@ -39,10 +39,10 @@ const TodoPage: React.FC<PropsType> = ({
 
     return (
         <Canvas>
-            <TextTitle>Handson Table!</TextTitle>
-            <TextDescription>Add content to option list then dropdown will be updated relatively in handson table</TextDescription>
+            <TextTitle>HandsonTable!</TextTitle>
+            <TextDescription>Add or remove content to option list then dropdown will be updated relatively in handsontable</TextDescription>
 
-            <div style={{ display: "flex" }}>
+            <RowContainer>
 
                 <ColumnContainer>
                     <HandsonTable />
@@ -54,7 +54,7 @@ const TodoPage: React.FC<PropsType> = ({
                         <ListColumnContainer />
                     </ColumnContainer>
                 </OptionEditorContainer>
-            </div>
+            </RowContainer>
             <WindowResize />
         </Canvas>
     )

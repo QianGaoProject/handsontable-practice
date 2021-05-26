@@ -100,3 +100,9 @@ body {
     font-style      : inherit;
     background-color: lightgray;
 }
+.handsontable.htColumnHeaders{
+    width: 600px;
+    @media screen and (max-width : 823px){        
+        width: 100%
+    }
+}

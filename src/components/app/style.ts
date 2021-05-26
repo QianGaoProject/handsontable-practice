@@ -69,3 +69,9 @@ export const OptionEditorContainer = styled("div")`
         display: block;
     }
 `;
+export const RowContainer = styled("div")`
+    display: flex;
+    @media screen and (max-width : 823px){        
+        display: block;
+    }
+`;

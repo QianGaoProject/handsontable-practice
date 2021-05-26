@@ -64,9 +64,9 @@ const OptionForm: React.FC<PropsType> = ({
     return (
         <Canvas>
             
-            <Input placeholder="ENTER ITEM" onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleItem(e)} />
-            {isSubmit && item.length === 0 && <p>Please Enter an item.</p>}
-            <Button type="submit" disabled={item.length === 0} onClick={() => handleSubmit()} >ADD OPTIONS</Button>
+            <Input placeholder="ENTER OPTION" onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleItem(e)} />
+            {isSubmit && item.length === 0 && <p>Please Enter an option.</p>}
+            <Button type="submit" disabled={item.length === 0} onClick={() => handleSubmit()} >ADD AN OPTION</Button>
             <SearchContainer>
                 <SearchTitleText>OPTIONS FILTER</SearchTitleText>
                 <SearchInput placeholder="SEARCH" onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSearch(e)} />

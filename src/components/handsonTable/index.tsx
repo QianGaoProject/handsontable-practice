@@ -9,6 +9,7 @@ import { updateCars } from '../../action/index'
 const HandsonTable: React.FC<PropsType> = ({
   items,
   cars,
+  screenWidth,
   updateCars
 }): React.ReactElement => {
   const [settings, setSettings] = React.useState({})
@@ -49,25 +50,25 @@ const HandsonTable: React.FC<PropsType> = ({
 
         }
       },
-      width: 600,
-      height: 500,
       colHeaders: ['Car', 'Model', 'Year', 'Color'],
+
+      autoWrapRow: true,
+      minSpareRows: true,
+      columnSorting: true,
+      fillHandle: false,
+      stretchH: "all",
       columns: [
         {
-          width: 200,
           type: 'text'
         },
         {
-          width: 100,
           type: 'text'
         },
         {
-          width: 100,
-          type: 'date', 
+          type: 'date',
           dateFormat: 'YYYY'
         },
         {
-          width: 200,
           type: 'dropdown',
           allowInvalid: false,
           source: Array.from(new Set(items.map(item => item.description)))
@@ -86,7 +87,8 @@ const HandsonTable: React.FC<PropsType> = ({
 const mapStateToProps = (state: StoreType) => {
   return {
     items: state.itemState.items,
-    cars: state.carState.cars
+    cars: state.carState.cars,
+    screenWidth: state.settingState.dimensions.width
   }
 }
 export default connect(mapStateToProps, {

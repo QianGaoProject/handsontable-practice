@@ -3,7 +3,7 @@
 [Project link](https://qiangaoproject.github.io/handsontable-practice/build/index.html)
 
 ## Installation
-* Download [node.js](https://pip.pypa.io/en/stable/)
+* Download [node.js](https://nodejs.org/en/)
 * Clone the repo
 ```bash
 git clone https://github.com/QianGaoProject/handsontable-practice.git

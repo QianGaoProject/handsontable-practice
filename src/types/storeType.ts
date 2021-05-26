@@ -1,3 +1,11 @@
+
+export type Car = {
+    id: string
+    car: string
+    model: string
+    year: string
+    color: string
+}
 export type Item = {
     id: string
     description: string
@@ -10,21 +18,26 @@ export type Column = {
     description: string
     createdAt: string
 }
-export type Dimensions ={
+export type Dimensions = {
     width: number
     height: number
+}
+
+type CarStateType = {
+    cars: Car[]
 }
 type ItemStateType = {
     items: Item[]
     search: string
 }
-type ColumnStateType ={
+type ColumnStateType = {
     columns: Column[]
 }
-type SettingStateType ={
+type SettingStateType = {
     dimensions: Dimensions
 }
 interface StoreType {
+    carState: CarStateType
     itemState: ItemStateType
     columnState: ColumnStateType
     settingState: SettingStateType

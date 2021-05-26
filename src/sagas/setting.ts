@@ -18,7 +18,7 @@ function* updateDimensionsWorker({ dimensions }: UpdateDimensionsAction) {
 
 
 //watchers
-export default function* settingSage(): Generator<StrictEffect> {
+export default function* settingSaga(): Generator<StrictEffect> {
     yield takeLatest(enumActionType.UPDATE_DIMENSIONS, updateDimensionsWorker)
 }
 

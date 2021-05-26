@@ -1,4 +1,4 @@
-import { Column, Dimensions, Item } from "./storeType"
+import { Car, Column, Dimensions, Item } from "./storeType"
 
 export enum enumActionType {
     /* For action creator */
@@ -26,11 +26,19 @@ export enum enumActionType {
     UPDATED_COLUMN = "UPDATED_COLUMN",
     GOT_COLUMNS = "GOT_COLUMNS",
 
-    
+
     /* For action creator */
     UPDATE_DIMENSIONS = "UPDATE_DIMENSIONS",
     /* For reducer */
-    UPDATED_DIMENSIONS = "UPDATED_DIMENSIONS"
+    UPDATED_DIMENSIONS = "UPDATED_DIMENSIONS",
+
+
+    /* For action creator */
+    GET_CARS = "GET_CARS",
+    UPDATE_CARS= "UPDATE_CARS",
+    /* For reducer */
+    GOT_CARS = "GOT_CARS",
+    UPDATED_CARS = "UPDATED_CARS",
 }
 
 export const delay = (ms: number) => new Promise(res => setTimeout(res, ms))
@@ -163,4 +171,29 @@ export type UpdateDimensionsActionCreator = (dimensions: Dimensions) => UpdateDi
 export interface UpdatedDimensionsAction {
     type: enumActionType.UPDATED_DIMENSIONS
     dimensions: Dimensions
+}
+
+
+/* For car */
+/* For action creator  */
+export interface UpdateCarsAction {
+    type: enumActionType.UPDATE_CARS
+    cars: Car[]
+}
+
+export interface GetCarsAction {
+    type: enumActionType.GET_CARS
+}
+export type GetCarsActionCreator = () => GetCarsAction
+export type UpdateCarsActionCreator = (cars: Car[]) => UpdateCarsAction
+
+
+/* For Reducers */
+export interface UpdatedCarsAction {
+    type: enumActionType.UPDATED_CARS
+    cars: Car[]
+}
+export interface GotCarsAction {
+    type: enumActionType.GOT_CARS
+    cars: Car[]
 }

@@ -1,6 +1,7 @@
-import { Canvas, ColumnContainer, TextDescription, TextTitle, TitleRectangle } from './style'
-import { getColumns, getItems } from '../../action'
+import { Canvas, ColumnContainer, OptionEditorContainer, TextDescription, TextTitle, TitleRectangle } from './style'
+import { getCars, getColumns, getItems } from '../../action'
 
+import HandsonTable from '../handsonTable'
 import ListColumnContainer from '../listColumnContainer'
 import OptionForm from '../optionsForm'
 import PropsType from './type'
@@ -12,37 +13,48 @@ import { connect } from 'react-redux'
 const TodoPage: React.FC<PropsType> = ({
     items,
     getItems,
+    getCars,
     getColumns,
 }): React.ReactElement => {
 
     //Fetch data from local strage
     React.useEffect(() => {
         getItems()
+        getCars()
         getColumns()
         console.log("mounted")
-    }, [getItems, getColumns])
+    }, [getItems, getColumns, getCars])
 
     //componnet did update only
     const didMount = React.useRef(false)
     React.useEffect(() => {
-        if(didMount.current){
+        if (didMount.current) {
             // update local storage when an item is added or deleted 
             localStorage.setItem('items', JSON.stringify(items))
-            console.log("local storage updated")
-        }else{
+            console.log("local storage updated: options")
+        } else {
             didMount.current = true
         }
-    },[items.length])
-    
+    }, [items.length])
+
     return (
         <Canvas>
             <TextTitle>Handson Table!</TextTitle>
-            <TextDescription>Add content to column then relatively update dropdown options</TextDescription>
-            <TitleRectangle>DROPDOWN EDITOR</TitleRectangle>
-            <ColumnContainer>
-                <OptionForm />
-                <ListColumnContainer />
-            </ColumnContainer>
+            <TextDescription>Add content to option list then dropdown will be updated relatively in handson table</TextDescription>
+
+            <div style={{ display: "flex" }}>
+
+                <ColumnContainer>
+                    <HandsonTable />
+                </ColumnContainer>
+                <OptionEditorContainer>
+                    <TitleRectangle>DROPDOWN EDITOR</TitleRectangle>
+                    <ColumnContainer>
+                        <OptionForm />
+                        <ListColumnContainer />
+                    </ColumnContainer>
+                </OptionEditorContainer>
+            </div>
             <WindowResize />
         </Canvas>
     )
@@ -55,6 +67,7 @@ const mapStateToProps = (state: StoreType) => {
     }
 }
 export default connect(mapStateToProps, {
+    getCars,
     getItems,
     getColumns
 })(TodoPage)

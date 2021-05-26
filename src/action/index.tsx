@@ -1,12 +1,14 @@
-import { Column, Dimensions, Item } from "../types/storeType"
+import { Car, Column, Dimensions, Item } from "../types/storeType"
 import {
     CreateColumnActionCreator,
     CreateItemActionCreator,
     DeleteColumnActionCreator,
     DeleteItemActionCreator,
+    GetCarsActionCreator,
     GetColumnsActionCreator,
     GetItemsActionCreator,
     SearchItemsActionCreator,
+    UpdateCarsActionCreator,
     UpdateDimensionsActionCreator,
     enumActionType,
 } from '../types/actionsType'
@@ -66,5 +68,20 @@ export const updateDimensions: UpdateDimensionsActionCreator = (dimensions: Dime
     return {
         type: enumActionType.UPDATE_DIMENSIONS,
         dimensions
+    }
+}
+
+/* For Car */
+
+export const getCars: GetCarsActionCreator = () => {
+    return {
+        type: enumActionType.GET_CARS
+    }
+}
+export const updateCars: UpdateCarsActionCreator = (cars: Car[]) => {
+ 
+    return {
+        type: enumActionType.UPDATE_CARS,
+        cars
     }
 }

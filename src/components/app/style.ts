@@ -61,3 +61,11 @@ export const ColumnContainer = styled("div")`
         display: block;
     }
 `;
+
+export const OptionEditorContainer = styled("div")`
+    width: 624px;
+    @media screen and (max-width : 823px){        
+        width: 90vw;
+        display: block;
+    }
+`;

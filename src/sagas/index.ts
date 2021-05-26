@@ -4,15 +4,17 @@ import {
 
 import { all, call, spawn } from "@redux-saga/core/effects";
 
+import carSaga from "./car";
 import columnSaga from "./column";
 import itemSaga from "./item";
-import settingSage from "./setting";
+import settingSaga from "./setting";
 
 export default function* sagas() {
     const sagas = [
         itemSaga,
         columnSaga,
-        settingSage
+        settingSaga,
+        carSaga
     ];
 
     yield all(sagas.map(saga =>

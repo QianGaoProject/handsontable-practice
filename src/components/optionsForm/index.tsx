@@ -68,7 +68,7 @@ const OptionForm: React.FC<PropsType> = ({
             {isSubmit && item.length === 0 && <p>Please Enter an item.</p>}
             <Button type="submit" disabled={item.length === 0} onClick={() => handleSubmit()} >ADD OPTIONS</Button>
             <SearchContainer>
-                <SearchTitleText>TABLE FILTER</SearchTitleText>
+                <SearchTitleText>OPTIONS FILTER</SearchTitleText>
                 <SearchInput placeholder="SEARCH" onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSearch(e)} />
                 <Search
                     width={screenWidth > 823 ? "25" : "18"}
@@ -83,35 +83,7 @@ const OptionForm: React.FC<PropsType> = ({
                     className=""
                 />
             </SearchContainer>
-            <DropDownContainer>
-                <DropDownHeader onClick={toggling} isOpen={isOpen}>
-                    <DropDownHeaderText>{option.description}</DropDownHeaderText>
-                    {isOpen ?
-                        <SortUp
-                            width={screenWidth > 823 ? "42" : "28"}
-                            height={screenWidth > 823 ? "24" : "16"}
-                            style={{ marginTop: screenWidth > 823 ? "15px" : "9px" }}
-                            fill="#ffffff"
-                            className=""
-                        />
-                        :
-                        <SortDown
-                            width={screenWidth > 823 ? "42" : "28"}
-                            height={screenWidth > 823 ? "24" : "16"}
-                            style={{ marginBottom: screenWidth > 823 ? "10px" : "6px" }}
-                            fill="#ffffff"
-                            className=""
-                        />
-                    }
-                </DropDownHeader>
-                {isOpen && (
-                    <DropDownList>
-                        {items !== undefined && items.map((opt, index_opt) => {
-                            return <ListOption key={index_opt} onClick={() => handleOption(opt)}>{opt.description}</ListOption>
-                        })}
-                    </DropDownList>
-                )}
-            </DropDownContainer>
+           
             
         </Canvas>
     )

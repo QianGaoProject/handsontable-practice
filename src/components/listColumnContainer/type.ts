@@ -1,7 +1,7 @@
-import { Column, Item } from '../../types/storeType'
-
+import { Car, Column, Item } from '../../types/storeType'
 import {
     DeleteItemActionCreator,
+    UpdateCarsActionCreator,
 } from '../../types/actionsType'
 
 interface PropsType {
@@ -14,6 +14,8 @@ export interface ItemPropsType {
     indexItem: number
     item: Item
     screenWidth: number
+    cars: Car[]
+    updateCars: UpdateCarsActionCreator
     deleteItem: DeleteItemActionCreator
 }
 

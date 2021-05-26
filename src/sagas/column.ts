@@ -67,7 +67,7 @@ function* getColumnsWorker() {
 
 
 //watchers
-export default function* columnSage(): Generator<StrictEffect> {
+export default function* columnSaga(): Generator<StrictEffect> {
     yield takeLatest(enumActionType.CREATE_COLUMN, createColumnWorker)
     yield takeEvery(enumActionType.DELETE_COLUMN, deleteColumnWorker)
     yield takeEvery(enumActionType.GET_COLUMNS, getColumnsWorker)

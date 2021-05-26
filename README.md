@@ -4,7 +4,7 @@
 
 ## Installation
 * Download [node.js](https://pip.pypa.io/en/stable/)
-* Colne the repo
+* Clone the repo
 ```bash
 git clone https://github.com/QianGaoProject/handsontable-practice.git
 ```
@@ -46,7 +46,7 @@ npm run build
 
 ## Built With
 
-* use React for JavaScript functionality
+* Use React for JavaScript functionality
 * Use redux for state management
 * Use typescript
 * Use webpack to create the project instead create-react-scripts
